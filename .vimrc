@@ -47,13 +47,16 @@ Bundle 'vim-scripts/L9'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'lekv/vim-clewn'
-Bundle 'chrisbra/csv.vim'
+" Bundle 'chrisbra/csv.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'vim-scripts/genutils'
 Bundle 'tpope/vim-surround'
 Bundle 'mklabs/grunt.vim'
 Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'docunext/closetag.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'rhysd/vim-clang-format'
+Bundle 'JonAWhite/vim-cpplint'
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -77,6 +80,7 @@ highlight comment ctermfg=darkmagenta
 highlight Identifier ctermfg=red
 highlight search ctermbg=lightgreen
 syntax on
+syntax enable
 set backspace=indent,eol,start
 set number
 set autoindent
@@ -197,6 +201,14 @@ let g:ycm_confirm_extra_conf=0
 
 " Tagbar
 let g:tagbar_sort = 0
+
+" cpplint
+noremap <buffer> <leader>cp :call Cpplint()<CR>
+noremap! <buffer> <leader>cp :call Cpplint()<CR>
+
+" Higlight column #110
+" set colorcolumn=110
+" highlight ColorColumn ctermbg=darkgray
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
