@@ -52,7 +52,7 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'vim-scripts/genutils'
 Bundle 'tpope/vim-surround'
 Bundle 'mklabs/grunt.vim'
-Bundle 'zhaocai/GoldenView.Vim'
+" Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'docunext/closetag.vim'
 " Bundle 'jiangmiao/auto-pairs'
 
