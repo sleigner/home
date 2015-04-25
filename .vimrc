@@ -56,6 +56,7 @@ Bundle 'docunext/closetag.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'rhysd/vim-clang-format'
 Bundle 'JonAWhite/vim-cpplint'
+Bundle 'mattn/emmet-vim'
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
