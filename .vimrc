@@ -37,26 +37,24 @@ Bundle 'Shutnik/jshint2.vim'
 Bundle 'bling/vim-airline'
 
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/ZoomWin'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'majutsushi/tagbar'
 
-Bundle 'chrisbra/NrrwRgn'
 Bundle 'vim-scripts/L9'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'lekv/vim-clewn'
 " Bundle 'chrisbra/csv.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'vim-scripts/genutils'
 Bundle 'tpope/vim-surround'
 Bundle 'mklabs/grunt.vim'
-Bundle 'zhaocai/GoldenView.Vim'
+" Bundle 'zhaocai/GoldenView.Vim'
 Bundle 'docunext/closetag.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'rhysd/vim-clang-format'
 Bundle 'JonAWhite/vim-cpplint'
+Bundle 'mattn/emmet-vim'
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -192,12 +190,15 @@ set incsearch           " do incremental searching
 set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
+set shellcmdflag=-ic
 
 " xterm copy/paste
 set clipboard=unnamedplus
 
 " YouCompleteMe / YCM
 let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tags_files=0
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " Tagbar
 let g:tagbar_sort = 0
