@@ -18,7 +18,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-fugitive'
-" Bundle 'Shougo/neocomplete.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/a.vim'
@@ -27,7 +26,6 @@ Bundle 'vim-scripts/dbext.vim'
 Bundle 'idbrii/vim-perforce'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-distinguished'
-" Bundle 'jlanzarotta/bufexplorer'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -190,7 +188,7 @@ set incsearch           " do incremental searching
 set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
-set shellcmdflag=-ic
+" set shellcmdflag=-ic " for some reason, it's added for fugitive
 
 " xterm copy/paste
 set clipboard=unnamedplus
