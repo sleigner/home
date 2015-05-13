@@ -53,6 +53,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'rhysd/vim-clang-format'
 Bundle 'JonAWhite/vim-cpplint'
 Bundle 'mattn/emmet-vim'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -208,6 +210,12 @@ noremap! <buffer> <leader>cp :call Cpplint()<CR>
 " Higlight column #110
 " set colorcolumn=110
 " highlight ColorColumn ctermbg=darkgray
+"
+" emmet
+let g:user_emmet_leader_key='<C-B>'
+
+" beautify
+autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
