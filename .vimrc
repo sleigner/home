@@ -55,6 +55,8 @@ Bundle 'JonAWhite/vim-cpplint'
 Bundle 'mattn/emmet-vim'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
+Bundle 'Shougo/vimshell.vim'
+Bundle 'Shougo/vimproc.vim'
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -130,6 +132,8 @@ let Tlist_Auto_Open=0
 " Syntastic
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['jscs','jshint']
+" debug mode
+" let g:syntastic_debug = 3
 
 " FuzzyFinder
 nnoremap <F6> :FufFile<CR>
@@ -216,6 +220,9 @@ let g:user_emmet_leader_key='<C-B>'
 
 " beautify
 autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
+
+"vimshell
+nmap xx <Plug>(vimshell_split_switch)
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
