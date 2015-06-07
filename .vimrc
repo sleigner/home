@@ -25,7 +25,6 @@ Bundle 'vim-scripts/dbext.vim'
 " Bundle 'vim-scripts/perforce.vim'
 Bundle 'idbrii/vim-perforce'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-distinguished'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -57,6 +56,11 @@ Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'Shougo/vimshell.vim'
 Bundle 'Shougo/vimproc.vim'
+
+" Color theme
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'goatslacker/mango.vim'
+
 " Bundle 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -99,6 +103,7 @@ set spl=en           " english spellchecking
 nnoremap <F6> :set pastetoggle<CR>
 
 set t_Co=256
+set background=dark
 " colorscheme desert
 colorscheme distinguished
 
@@ -132,14 +137,15 @@ let Tlist_Auto_Open=0
 " Syntastic
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['jscs','jshint']
-" debug mode
+" Syntastic debug mode
 " let g:syntastic_debug = 3
 
 " FuzzyFinder
 nnoremap <F6> :FufFile<CR>
 
 " jshint2
-let jshint2_save = 1
+" let jshint2_save = 1 // disable for now
+
 " jshint validation
 nnoremap <silent><F7> :JSHint<CR>
 inoremap <silent><F7> <C-O>:JSHint<CR>
@@ -221,8 +227,8 @@ let g:user_emmet_leader_key='<C-B>'
 " beautify
 autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 
-"vimshell
-nmap xx <Plug>(vimshell_split_switch)
+" vimshell
+nmap cx <Plug>(vimshell_split_switch)
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
