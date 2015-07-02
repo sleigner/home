@@ -169,6 +169,8 @@ set backspace=indent,eol,start
 " CtrlP
 map <silent> <leader>be :CtrlPBuffer<CR>
 map <silent> <leader>e :CtrlP<CR>
+"n search for custom folder
+map <leader>eb :CtrlP 
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
