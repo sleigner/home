@@ -209,6 +209,16 @@ autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 " vimshell
 nmap cx <Plug>(vimshell_split_switch)
 
+" neoterm
+" open terminal
+nnoremap <silent> ,to :call neoterm#open()<cr>
+" hide / close terminal
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
