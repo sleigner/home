@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/dbext.vim'
 " Plug 'vim-scripts/perforce.vim'
@@ -45,6 +45,11 @@ Plug 'Shougo/vimproc.vim'
 " Color theme
 Plug 'Lokaltog/vim-distinguished'
 Plug 'goatslacker/mango.vim'
+
+Plug 'posva/vim-vue'
+Plug 'kassio/neoterm'
+
+Plug 'bigfish/neovim-eslint'
 
 " Plug 'jiangmiao/auto-pairs'
 
@@ -107,7 +112,8 @@ let Tlist_Auto_Open=0
 
 " Syntastic
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_javascript_checkers = ['jscs','jshint']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_javascript_checkers = ['eslint']
 " Syntastic debug mode
 " let g:syntastic_debug = 3
 
