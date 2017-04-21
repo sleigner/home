@@ -66,8 +66,8 @@ set number
 set autoindent
 set expandtab
 set smarttab
-set ts=4
-set shiftwidth=2
+set ts=2
+set sw=2
 set nowrap
 set wildmode=list:longest,full
 set ignorecase
