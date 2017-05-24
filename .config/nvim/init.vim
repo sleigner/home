@@ -51,6 +51,9 @@ Plug 'kassio/neoterm'
 
 Plug 'bigfish/neovim-eslint'
 
+Plug 'leafgarland/typescript-vim'
+
+
 " Plug 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -181,9 +184,6 @@ set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
 " set shellcmdflag=-ic " for some reason, it's added for fugitive
 
-" xterm copy/paste
-set clipboard=unnamedplus
-
 " YouCompleteMe / YCM
 let g:ycm_confirm_extra_conf=0
 let g:ycm_collect_identifiers_from_tags_files=0
@@ -218,6 +218,12 @@ nnoremap <silent> ,th :call neoterm#close()<cr>
 nnoremap <silent> ,tl :call neoterm#clear()<cr>
 " kills the current job (send a <c-c>)
 nnoremap <silent> ,tc :call neoterm#kill()<cr>
+
+nnoremap <silent> ,o :only<cr>
+
+" fugitive
+nnoremap <silent> ,gd :Gdiff<cr>
+nnoremap <silent> ,gs :Gstatus<cr>
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
