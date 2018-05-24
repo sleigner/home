@@ -41,6 +41,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
 Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/vimproc.vim'
+Plug 'tpope/vim-rhubarb'
 
 " Color theme
 Plug 'Lokaltog/vim-distinguished'
@@ -117,6 +118,7 @@ let Tlist_Auto_Open=0
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " Syntastic debug mode
 " let g:syntastic_debug = 3
 
@@ -183,6 +185,10 @@ set showmatch           " jump to matches when entering regexp
 set ignorecase          " ignore case when searching
 set smartcase           " no ignorecase if Uppercase char present
 " set shellcmdflag=-ic " for some reason, it's added for fugitive
+set clipboard=unnamedplus
+
+" Remap <Esc> for kinesis 2 keyboard
+:imap <S-Space> <Esc>
 
 " YouCompleteMe / YCM
 let g:ycm_confirm_extra_conf=0
@@ -224,6 +230,10 @@ nnoremap <silent> ,o :only<cr>
 " fugitive
 nnoremap <silent> ,gd :Gdiff<cr>
 nnoremap <silent> ,gs :Gstatus<cr>
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap <Esc> <nop>
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
