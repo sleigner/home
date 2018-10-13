@@ -217,13 +217,13 @@ nmap cx <Plug>(vimshell_split_switch)
 
 " neoterm
 " open terminal
-nnoremap <silent> ,to :call neoterm#open()<cr>
+nnoremap <silent> ,to :Tnew<cr>
 " hide / close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> ,th :Tclose<cr>
 " clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
+nnoremap <silent> ,tl :Tclear<cr>
 " kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
+nnoremap <silent> ,tc :Tkill<cr>
 
 nnoremap <silent> ,o :only<cr>
 
