@@ -1,7 +1,6 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
@@ -44,8 +43,9 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tpope/vim-rhubarb'
 
 " Color theme
-Plug 'Lokaltog/vim-distinguished'
+Plug 'chriskempson/base16-vim'
 Plug 'goatslacker/mango.vim'
+Plug 'jnurmine/Zenburn'
 
 Plug 'posva/vim-vue'
 Plug 'kassio/neoterm'
@@ -119,7 +119,7 @@ let Tlist_Auto_Open=0
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 " Syntastic debug mode
 " let g:syntastic_debug = 3
 
@@ -158,10 +158,6 @@ map <leader>eb :CtrlP
 let g:airline#extensions#tabline#enabled = 1
 
 set tags+=./tags
-
-" Tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_completion_detail = 1
  
 " Create ctag file of current directory
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -242,6 +238,28 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 inoremap <Esc> <nop>
 
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+" Windows-specific
+set background=dark
+set clipboard=unnamed
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](doc|tmp|node_modules|dist)',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+
+colorscheme base16-default-dark
+
+if !has("gui_running")
+    set term=xterm
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let &t_AF="\e[38;5;%dm"
+    colorscheme zenburn
+endif
+
+set grepprg=grep\ -nH
+set noswapfile
+
+if filereadable(expand("~/_vimrc.local"))
+  source ~/_vimrc.local
 endif
