@@ -40,7 +40,7 @@ Plug 'mattn/emmet-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
 Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tpope/vim-rhubarb'
 
 " Color theme
@@ -119,7 +119,7 @@ let Tlist_Auto_Open=0
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 " Syntastic debug mode
 " let g:syntastic_debug = 3
 
@@ -159,6 +159,10 @@ map <leader>eb :CtrlP
 let g:airline#extensions#tabline#enabled = 1
 
 set tags+=./tags
+
+" Tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_detail = 1
  
 " Create ctag file of current directory
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
