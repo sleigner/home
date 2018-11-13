@@ -53,6 +53,7 @@ Plug 'kassio/neoterm'
 Plug 'bigfish/neovim-eslint'
 
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 
 " Plug 'jiangmiao/auto-pairs'
