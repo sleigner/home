@@ -39,7 +39,6 @@ Plug 'JonAWhite/vim-cpplint'
 Plug 'mattn/emmet-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
-Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tpope/vim-rhubarb'
 
@@ -54,6 +53,8 @@ Plug 'bigfish/neovim-eslint'
 
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 
 " Plug 'jiangmiao/auto-pairs'
@@ -216,9 +217,6 @@ let g:user_emmet_leader_key='<C-B>'
 " beautify
 autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 
-" vimshell
-nmap cx <Plug>(vimshell_split_switch)
-
 " neoterm
 " open terminal
 nnoremap <silent> ,to :call neoterm#open()<cr>
@@ -237,6 +235,38 @@ nnoremap <silent> ,gs :Gstatus<cr>
 
 " Force to syntax highlight Vue file
 autocmd FileType vue syntax sync fromstart
+
+" FZF
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Likewise, Files command with preview window
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+map <silent> <leader>f :Files<CR>
+map <silent> <leader>fg :Rg 
+map <silent> <leader>fc :Commits<CR>
 
 inoremap jk <Esc>
 inoremap kj <Esc>
