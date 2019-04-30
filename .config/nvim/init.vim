@@ -264,9 +264,11 @@ command! -bang -nargs=* Rg
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
-map <silent> <leader>f :Files<CR>
-map <silent> <leader>fg :Rg 
-map <silent> <leader>fc :Commits<CR>
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+nnoremap <silent> <leader>f :GFiles<CR>
+nnoremap <leader>fg :Rg 
+nnoremap <silent> <leader>fc :Commits<CR>
 
 inoremap jk <Esc>
 inoremap kj <Esc>
