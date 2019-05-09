@@ -19,8 +19,6 @@ Plug 'Shutnik/jshint2.vim'
 Plug 'bling/vim-airline'
 
 Plug 'kien/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 
 Plug 'vim-scripts/L9'
@@ -35,7 +33,6 @@ Plug 'mklabs/grunt.vim'
 Plug 'docunext/closetag.vim'
 Plug 'godlygeek/tabular'
 Plug 'rhysd/vim-clang-format'
-Plug 'JonAWhite/vim-cpplint'
 Plug 'mattn/emmet-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'einars/js-beautify'
@@ -124,9 +121,6 @@ let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' ch
 " Syntastic debug mode
 " let g:syntastic_debug = 3
 
-" FuzzyFinder
-nnoremap <F6> :FufFile<CR>
-
 " jshint2
 " let jshint2_save = 1 // disable for now
 
@@ -150,11 +144,6 @@ autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
 " backspace
 set backspace=indent,eol,start
 
-" CtrlP
-map <silent> <leader>be :CtrlPBuffer<CR>
-map <silent> <leader>e :CtrlP<CR>
-"n search for custom folder
-map <leader>eb :CtrlP 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 
@@ -266,7 +255,8 @@ command! -bang -nargs=* Rg
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-nnoremap <silent> <leader>f :GFiles<CR>
+nnoremap <silent> <leader>e :GFiles<CR>
+nnoremap <silent> <leader>be :Buffers<CR>
 nnoremap <leader>fg :Rg 
 nnoremap <silent> <leader>fc :Commits<CR>
 
