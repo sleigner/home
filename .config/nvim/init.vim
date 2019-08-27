@@ -242,8 +242,11 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 " Likewise, Files command with preview window
-command! -bang -nargs=? -complete=dir Files
+command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=? -complete=dir Buffers
+  \ call fzf#vim#buffers(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
 command! -bang -nargs=* Rg
