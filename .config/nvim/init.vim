@@ -3,11 +3,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/dbext.vim'
-" Plug 'vim-scripts/perforce.vim'
 Plug 'idbrii/vim-perforce'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'jelera/vim-javascript-syntax'
@@ -24,12 +22,10 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/L9'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-unimpaired'
-" Plug 'chrisbra/csv.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/genutils'
 Plug 'tpope/vim-surround'
 Plug 'mklabs/grunt.vim'
-" Plug 'zhaocai/GoldenView.Vim'
 Plug 'docunext/closetag.vim'
 Plug 'godlygeek/tabular'
 Plug 'rhysd/vim-clang-format'
@@ -53,9 +49,6 @@ Plug 'Quramy/tsuquyomi'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-
-" Plug 'jiangmiao/auto-pairs'
-
 " All of your Plugins must be added before the following line
 call plug#end()
 
@@ -77,7 +70,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-" set cursorline        " have a line indicate the cursor location
+set cursorline        " have a line indicate the cursor location
 set spl=en           " english spellchecking
 nnoremap <F6> :set pastetoggle<CR>
 
@@ -85,10 +78,6 @@ set t_Co=256
 set background=dark
 " colorscheme desert
 colorscheme distinguished
-
-" searchfold
-nnoremap <silent> ufa :set foldlevel=99<CR>
-let g:searchfold_usestep = 3
 
 nnoremap <silent> zj o<Esc>
 
@@ -101,17 +90,6 @@ nmap <silent> <leader>gs :vimgrep /<C-r>// ./* %<CR>:ccl<CR>:cwin<CR><C-W>J:nohl
  
 " Search the current file for the word under the cursor and display matches
 nmap <silent> <leader>gw :vimgrep /<C-r><C-w>/ ./* %<CR>:ccl<CR>:cwin<CR><C-W>J:nohls<CR>
-
-
-" NERDTree
-nnoremap <F10> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.d$', '\.adserial$', '\.serial_parse$']
-let NERDTreeDirArrows=0
-
-
-" Taglist
-nnoremap <silent> <leader>tl :TlistToggle<CR>
-let Tlist_Auto_Open=0
 
 " Syntastic
 let g:syntastic_cpp_check_header = 1
@@ -208,13 +186,13 @@ autocmd FileType html noremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 
 " neoterm
 " open terminal
-nnoremap <silent> ,to :call neoterm#open()<cr>
+nnoremap <silent> ,to :Topen<cr>
 " hide / close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> ,th :Ttoggle<cr>
 " clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
+nnoremap <silent> ,tl :Tclear<cr>
 " kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
+nnoremap <silent> ,tc :Tkill<cr>
 
 nnoremap <silent> ,o :only<cr>
 
